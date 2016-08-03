@@ -52,5 +52,5 @@ The callouts in action (White theme):
 
 ## Changelog
 
-* 0.0.0 Releases:
-  * 0.0.1 First release
+* 0.1.0 Releases:
+  * 0.1.0 First release

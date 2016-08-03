@@ -48,7 +48,7 @@ Callouts are case-insensitive.
 
 The callouts in action (White theme):
 
-![Screenshots](screenshots.png)
+![Screenshots](https://raw.githubusercontent.com/stuebersystems/gitbook-plugin-bootstrap-callout/master/screenshots.png)
 
 ## Changelog
 

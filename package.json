@@ -1,7 +1,7 @@
 ﻿{
 	"name": "gitbook-plugin-bootstrap-callout",
-	"version": "0.1.0",
-	"description": "Transform quotes into callouts in your Gitbook",
+	"version": "0.1.1",
+	"description": "Transform quotes into Bootstrap like callouts in your Gitbook",
     "main": "index.js",
     "license": "Apache-2.0",
     "author": "STÜBER SYSTEMS <gitbook@stueber.de>",

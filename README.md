@@ -34,7 +34,7 @@ Supported callouts are:
 - `> #### warning::Title`
 - `> #### info::Title`
 
-If you leave out the type a default callout is used
+If you leave out the type a default callout is used.
 
 ```
 > #### Title
@@ -54,3 +54,4 @@ The callouts in action (White theme):
 
 * 0.1.0 Releases:
   * 0.1.0 First release
+  * 0.1.1 Some text changes

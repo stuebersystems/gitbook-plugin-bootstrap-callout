@@ -1,4 +1,4 @@
-# Gitbook Callout Plugin
+# Gitbook Callout Plugin [![npm version](https://badge.fury.io/js/gitbook-plugin-bootstrap-callout.svg)](https://badge.fury.io/js/gitbook-plugin-bootstrap-callout)
 
 This plugin creates [Bootstrap](https://getbootstrap.com/) like callouts for your GitBook. All three GitBook themes (White, Sepia, Night) are supported. This project took heavy inspiration from https://github.com/gubler/gitbook-plugin-callouts.
 

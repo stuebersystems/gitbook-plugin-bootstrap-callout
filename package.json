@@ -1,22 +1,22 @@
 ﻿{
-	"name": "gitbook-plugin-bootstrap-callout",
-	"version": "0.1.1",
-	"description": "Transform quotes into Bootstrap like callouts in your Gitbook",
+    "name": "gitbook-plugin-bootstrap-callout",
+    "version": "0.1.2",
+    "description": "Transform quotes into Bootstrap like callouts in your Gitbook",
     "main": "index.js",
     "license": "Apache-2.0",
     "author": "STÜBER SYSTEMS <gitbook@stueber.de>",
     "engines": {
         "gitbook": ">=3.1.1"
     },
-	"homepage": "https://github.com/stuebersystems/gitbook-plugin-bootstrap-callout",
+    "homepage": "https://github.com/stuebersystems/gitbook-plugin-bootstrap-callout",
     "repository": {
         "type": "git",
         "url": "https://github.com/stuebersystems/gitbook-plugin-bootstrap-callout.git"
-	},	
+    },
     "bugs": {
-		"url": "https://github.com/stuebersystems/gitbook-plugin-bootstrap-callout/issues"
-	},
-	"dependencies": {
-		"cheerio": "^0.19.0"
-	}
+        "url": "https://github.com/stuebersystems/gitbook-plugin-bootstrap-callout/issues"
+    },
+    "dependencies": {
+        "cheerio": "^0.19.0"
+    }
 }

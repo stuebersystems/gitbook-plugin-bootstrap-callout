@@ -10,8 +10,8 @@ Add the plugin to your `book.json`:
 
 ```
 {
-	"plugins" : [ "bootstrap-callout" ]
-}		
+    "plugins" : [ "bootstrap-callout" ]
+}
 ```
 
 ### Create callouts
@@ -55,3 +55,4 @@ The callouts in action (White theme):
 * 0.1.0 Releases:
   * 0.1.0 First release
   * 0.1.1 Some text changes
+  * 0.1.2 Show title only if it has a value (thanks arikfr)

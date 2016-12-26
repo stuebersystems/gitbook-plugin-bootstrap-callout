@@ -1,74 +1,73 @@
 var cheerio = require( "cheerio" )
-   
+
 var convertBlockquotes = function (page)
 {
-	var $ = cheerio.load( page.content );
-	
-	// For each blockquote...
-	$( "blockquote" ).each(function () {
-		
-		// Find first h4 header
-		var h4Header = $(this).find('h4:first-child');
-		
-		// Cancel if no header found
-		if( !h4Header || h4Header.length == 0) 
-		{
-			return;
-		}
-		
-		// Split header text
-		var headerParts = $(h4Header).text().split('::', 2);
+    var $ = cheerio.load( page.content );
 
-		// Set style and title
-		var style = headerParts[0].toLowerCase() ? headerParts[0].toLowerCase() : "default";
-		var title = headerParts[1];//(headerParts[1] === "") ? headerParts[0] : headerParts[1];
+    // For each blockquote...
+    $( "blockquote" ).each(function () {
 
-		// Store all segments as array
-		var children = $(this).children().toArray();
-		
-		// Remove the first segment
-		children.shift();
+        // Find first h4 header
+        var h4Header = $(this).find('h4:first-child');
 
-		// Create callout
-		var callout = $('<div>')
-			.addClass('callout callout-' + style);
-
-		// Create callout header
-        if (title !== "") {
-            var calloutHeader = $('<h4>').append(title);
-			callout.append(calloutHeader)
+        // Cancel if no header found
+        if( !h4Header || h4Header.length == 0) 
+        {
+            return;
         }
 
-		// Create callout bodyy
-		var calloutBody = $('<div>').append(children);
-		callout.append(calloutBody);
+        // Split header text
+        var headerParts = $(h4Header).text().split('::', 2);
 
-		// Insert new callout to DOM
-		$(this).before(callout);
+        // Set style and title
+        var style = headerParts[0].toLowerCase() ? headerParts[0].toLowerCase() : "default";
+        var title = headerParts[1];
 
-		// Remove old blockquote
-		$(this).remove();
+        // Store all segments as array
+        var children = $(this).children().toArray();
 
-		// Replace page content 
-		page.content = $.html();
-		
-	});
+        // Remove the first segment
+        children.shift();
 
-	return page;
+        // Create callout
+        var callout = $('<div>').addClass('callout callout-' + style);
+
+        // Add callout header
+        if (title !== "") {
+            var calloutHeader = $('<h4>').append(title);
+            callout.append(calloutHeader)
+        }
+
+        // Add callout body
+        var calloutBody = $('<div>').append(children);
+        callout.append(calloutBody);
+
+        // Insert new callout to DOM
+        $(this).before(callout);
+
+        // Remove old blockquote
+        $(this).remove();
+
+        // Replace page content 
+        page.content = $.html();
+        
+    });
+
+    return page;
 };
 
 module.exports = {
-	book: {
-			assets: './assets',
-			css: [
-				'plugin.css'
-			]
+    book: {
+            assets: './assets',
+            css: [
+                'plugin.css'
+            ]
     },
-	hooks: {
-			"page": function(page) 
-			{
-				page = convertBlockquotes(page);
-				return page;
-	     	}
+    hooks: {
+            "page": function(page) 
+            {
+                page = convertBlockquotes(page);
+                return page;
+             }
     }
 };

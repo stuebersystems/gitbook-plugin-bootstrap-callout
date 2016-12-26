@@ -21,7 +21,7 @@ var convertBlockquotes = function (page)
 
 		// Set style and title
 		var style = headerParts[0].toLowerCase() ? headerParts[0].toLowerCase() : "default";
-		var title = (headerParts[1] === "") ? headerParts[0] : headerParts[1];
+		var title = headerParts[1];//(headerParts[1] === "") ? headerParts[0] : headerParts[1];
 
 		// Store all segments as array
 		var children = $(this).children().toArray();
@@ -29,17 +29,19 @@ var convertBlockquotes = function (page)
 		// Remove the first segment
 		children.shift();
 
+		// Create callout
+		var callout = $('<div>')
+			.addClass('callout callout-' + style);
+
 		// Create callout header
-		var calloutHeader = $('<h4>').append(title);
+        if (title !== "") {
+            var calloutHeader = $('<h4>').append(title);
+			callout.append(calloutHeader)
+        }
 
 		// Create callout bodyy
 		var calloutBody = $('<div>').append(children);
-
-		// Create callout
-		var callout = $('<div>')
-			.addClass('callout callout-' + style)
-			.append(calloutHeader)
-			.append(calloutBody);
+		callout.append(calloutBody);
 
 		// Insert new callout to DOM
 		$(this).before(callout);
